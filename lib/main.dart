@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_something/scrollToIndexList.dart';
 import './modal.dart';
+import './scrollToIndexList.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,7 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       return CustomDialogBox();
                     });
               },
-            )
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScrollToIndexList(),
+                      ));
+                },
+                child: Text("ページ内スクロール")),
           ],
         ),
       ),
